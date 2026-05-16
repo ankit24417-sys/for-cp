@@ -56,4 +56,15 @@ both commands are identical
 
 
 
+<----------------------------branching-------------------------------->
+
+1) to create a new branch we use the command --->
+   git branch <branch name>
+2) to rename the existing branch we use the command -->
+   git branch -M <branch name>
+3) to see the available branches we use the command -->
+  git branch
+4) to changes the branch we use the command --->
+  git checkout <branch name>  or git switch <branch name>
+
   
