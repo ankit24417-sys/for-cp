@@ -91,3 +91,16 @@ ii)
 1) generally we write the branch name in this format 
    i) bug/<name of the bug>
    ii) feat/<name of the feature>
+
+
+ <-----------------------stashing--------------------------------------->
+
+ 1) let us assume a situation i wrote some code and i have some changes in my local code and some other developer also change the remote code now i want to add those changes made by another developer . i can run --> git pull 
+ in normal condition , but in this case it will generate the error because we have some change on the local machine  , in this case we use stash 
+ it put our change on hold and we can run the command --> git pull 
+ and then again we run some command and our change come back
+
+  i) git stash
+  ii) git pull
+  iii) git stash apply
+  
