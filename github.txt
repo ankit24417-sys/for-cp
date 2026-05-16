@@ -70,4 +70,24 @@ both commands are identical
 5) if we push different branch's code to the repo , it will generates the error that the current branch exist on local machine but not on remote (github)
 => to solve it push the branch on the remote using the command -->
   git push -u origin main <branch name> 
-  
+
+
+ <--------------------merging of branch------------------------------------>
+
+1) to merge the branch we have two methods --> 
+ first one is command line method and another is method to create a pull req
+
+i) 
+ to merge the branch, we use this command --->
+  git merge origin/<branch name>
+
+ii)
+ another method is to raise a pull request on github and generally we use the second one in most of the times
+ but the pull request will merge one the github server and to see changes on our local machine we use the command ==> git pull
+
+
+<---------------------------branch naming convention------------------------->
+
+1) generally we write the branch name in this format 
+   i) bug/<name of the bug>
+   ii) feat/<name of the feature>
