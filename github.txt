@@ -33,9 +33,17 @@
 
    <--------------------adding github to vscode------------------>
 
- 9) to link our local machine to github , all we need a link of a github repo.
+ 1) to link our local machine to github , all we need a link of a github repo.
    ==> git remote add <name>(you can give name whaterever you like but by convention we generally give it to "origin") <github repo link>
    to check the add repo run the command ==> git remote -v
+
+2) to push the local branch to github branch and connect the local branch with  github(remote) branch. 
+
+ i) git push --set-upstream origin main(branch name)
+ ii) git push -u origin main(branch name)
+
+both commands are identical 
+
 
 
 
