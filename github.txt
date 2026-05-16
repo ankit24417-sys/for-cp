@@ -1,0 +1,42 @@
+       <<<<< ----------------Github Notes ----------------------->>>>>>
+
+    1) to initialise git in any folder or directory , we have to run commmand 
+      git init
+      after this , on the all files a "U" symbol just appears which mean untracked
+  
+  2) to enable tracking we write commmand ==> git add filename1 filename2 ...
+    to add every thing in the folder we run ==> git add .
+
+  3) to remove a file from tracking we run the command ===> git rm <filename>
+
+  4) after we perform commits , by this command ==> git commit -m "message"
+
+  5) to see all the commits in the same working directory we run the command 
+      ===> git log
+  
+  6) to see the which changes are made by which developer on which time we run the command ==> git blame <filename>
+
+  7) it is good practise to commit each functionality unlike write whole code and the push 
+  
+  8) if our current code is buggy and we want to move to previous commit code 
+   then we have two ways ===> 
+
+   i) reseting the current node (which is head ) and pointing it towards the previous one commit id
+    git reset --hard <id of commit which you want> 
+    but our all the current node will be lost , so this method is not ok
+  
+  ii) next method is reverting the changes
+   ==> git revert <id of commit>
+   this command reverse the changes in the file desired file means it will remove whaterever is add and add whaterever is removed
+
+
+
+   <--------------------adding github to vscode------------------>
+
+ 9) to link our local machine to github , all we need a link of a github repo.
+   ==> git remote add <name>(you can give name whaterever you like but by convention we generally give it to "origin") <github repo link>
+   to check the add repo run the command ==> git remote -v
+
+
+
+  
