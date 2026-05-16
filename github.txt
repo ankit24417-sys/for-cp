@@ -67,4 +67,7 @@ both commands are identical
 4) to changes the branch we use the command --->
   git checkout <branch name>  or git switch <branch name>
 
+5) if we push different branch's code to the repo , it will generates the error that the current branch exist on local machine but not on remote (github)
+=> to solve it push the branch on the remote using the command -->
+  git push -u origin main <branch name> 
   
