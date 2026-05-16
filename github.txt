@@ -46,5 +46,14 @@ both commands are identical
 
 
 
+  <---------------------important one ------------------------------------>
+
+  => suppose we have an existing repo and we create another file and want to push in the same repo from the different machine 
+=> then we will get some error like " repo contains some work , changes rejected"
+=> in that case we use the command --->
+  git pull origin main --allow-unrelated-histories
+=> this command download the content present in the git repo the combine it with local machine repo and then push it to the github
+
+
 
   
