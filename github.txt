@@ -1,0 +1,146 @@
+       <<<<< ----------------Github Notes ----------------------->>>>>>
+
+    1) to initialise git in any folder or directory , we have to run commmand 
+      git init
+      after this , on the all files a "U" symbol just appears which mean untracked
+  
+  2) to enable tracking we write commmand ==> git add filename1 filename2 ...
+    to add every thing in the folder we run ==> git add .
+
+  3) to remove a file from tracking we run the command ===> git rm <filename>
+
+  4) after we perform commits , by this command ==> git commit -m "message"
+
+  5) to see all the commits in the same working directory we run the command 
+      ===> git log
+  
+  6) to see the which changes are made by which developer on which time we run the command ==> git blame <filename>
+
+  7) it is good practise to commit each functionality unlike write whole code and the push 
+  
+  8) if our current code is buggy and we want to move to previous commit code 
+   then we have two ways ===> 
+
+   i) reseting the current node (which is head ) and pointing it towards the previous one commit id
+    git reset --hard <id of commit which you want> 
+    but our all the current node will be lost , so this method is not ok
+  
+  ii) next method is reverting the changes
+   ==> git revert <id of commit>
+   this command reverse the changes in the file desired file means it will remove whaterever is add and add whaterever is removed
+
+
+
+   <--------------------adding github to vscode------------------>
+
+ 1) to link our local machine to github , all we need a link of a github repo.
+   ==> git remote add <name>(you can give name whaterever you like but by convention we generally give it to "origin") <github repo link>
+   to check the add repo run the command ==> git remote -v
+
+2) to push the local branch to github branch and connect the local branch with  github(remote) branch. 
+
+ i) git push --set-upstream origin main(branch name)
+ ii) git push -u origin main(branch name)
+
+both commands are identical 
+
+
+
+  <---------------------important one ------------------------------------>
+
+  => suppose we have an existing repo and we create another file and want to push in the same repo from the different machine 
+=> then we will get some error like " repo contains some work , changes rejected"
+=> in that case we use the command --->
+  git pull origin main --allow-unrelated-histories
+=> this command download the content present in the git repo the combine it with local machine repo and then push it to the github
+
+
+
+<----------------------------branching-------------------------------->
+
+1) to create a new branch we use the command --->
+   git branch <branch name>
+2) to rename the existing branch we use the command -->
+   git branch -M <branch name>
+3) to see the available branches we use the command -->
+  git branch
+4) to changes the branch we use the command --->
+  git checkout <branch name>  or git switch <branch name>
+
+5) if we push different branch's code to the repo , it will generates the error that the current branch exist on local machine but not on remote (github)
+=> to solve it push the branch on the remote using the command -->
+  git push -u origin main <branch name> 
+
+
+ <--------------------merging of branch------------------------------------>
+
+1) to merge the branch we have two methods --> 
+ first one is command line method and another is method to create a pull req
+
+i) 
+ to merge the branch, we use this command --->
+  git merge origin/<branch name>
+
+ii)
+ another method is to raise a pull request on github and generally we use the second one in most of the times
+ but the pull request will merge one the github server and to see changes on our local machine we use the command ==> git pull
+
+
+<---------------------------branch naming convention------------------------->
+
+1) generally we write the branch name in this format 
+   i) bug/<name of the bug>
+   ii) feat/<name of the feature>
+
+
+ <-----------------------stashing--------------------------------------->
+
+ 1) let us assume a situation i wrote some code and i have some changes in my local code and some other developer also change the remote code now i want to add those changes made by another developer . i can run --> git pull 
+ in normal condition , but in this case it will generate the error because we have some change on the local machine  , in this case we use stash 
+ it put our change on hold and we can run the command --> git pull 
+ and then again we run some command and our change come back
+
+  i) git stash
+  ii) git pull
+  iii) git stash apply
+  
+ 
+
+
+
+ <================================ How to contribute =======================>
+
+
+ 1) first we fork the repo in which we want to contribute .
+  forking means creating a copy of that repo and after this , that repo will appears on your github repo section 
+
+2) now we make a separate branch and make change in this branch and after this we push the changes in the our forked repo 
+ here is the set of commands
+   i) git clone <https address of repo>
+   ii)git branch "branch name" 
+   iii) git checkout <branch name>
+   iv) ??? make some changes 
+   v) git add .
+   vi) git commit -m "blah blah"
+   vii) git push origin <branch name>  (if remote was not added run the command
+     git remote add origin <https link of repo>)
+
+ 3) now in our remote , our newly created branch is showing 
+   now do compare and pull request and raise a pull request
+
+ 4) there is a naming convention for newly created branch name 
+   it should be like 
+   i) feat-<name of feat>   or  feat/<name of feat>
+   ii) bug- <name of bug>  or   bug/<name of bug>
+   iii) wip -<name of work>  (wip means ==> work in progress)
+   eg-  feat/dark-mode 
+
+5) now , since forked just create a copy of original repo and it does't update over the time means if the code of our original repo changes , there will be no changes in our forked repo 
+ to solve this problem we add original repo to our local machine and fetch code from it and sync the code with our forked repo
+ here are the some commands
+
+  i) git remote add upstream <https link>
+  ii)git pull upstream main
+  iii) git push origin main
+ 
+ code  synced successfully
